@@ -165,15 +165,13 @@ const createBid = async (req, res) => {
     // console.log('user===>',user);
     const product = await ProdukModel.findById(req.params.id);
     // console.log('product===>',product);
-    const { nominal_bid , id} = req.body;
+    const { nominal_bid} = req.body;
     // console.log(req.body);
 
     const newBid = {
-      id,
       nominal_bid,
-      // name: user.name,
-      // avatar: user.avatar,
-      // user: req.user.id,
+      name: user.name,
+      user: req.user.id,
     };
     console.log(newBid);
 
